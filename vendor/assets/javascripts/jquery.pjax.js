@@ -569,7 +569,7 @@ function extractContainer(data, xhr, options) {
     var $head = $(data.match(/<head[^>]*>([\s\S.]*)<\/head>/i)[0])
     var $body = $(data.match(/<body[^>]*>([\s\S.]*)<\/body>/i)[0])
   } else {
-    var $head = $body = $($.parseHTML(data))
+    var $head = $body = $($.parseHTML(data, document, true))
   }
 
   // If response data is empty, return fast
